@@ -1,0 +1,1998 @@
+* {
+    box-sizing: border-box;  
+}
+
+@font-face {
+    font-family: 'Raleway-Regular';
+    src: url('Raleway-Regular.woff') format('woff');      
+}
+
+@font-face {
+    font-family: 'Raleway-Bold';
+    src: url('Raleway-Bold.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Raleway-ExtraBold';
+    src: url('Raleway-ExtraBold.woff') format('woff');
+}
+
+body {    
+    display: flex;    
+    flex-direction: column;
+    background-color: #ffffff;    
+}
+
+p, nav li {
+    font-family: 'Raleway-Regular', sans-serif;    
+}
+
+p span, form input::placeholder, .search-field, .search-desktop {
+    font-family: 'Raleway-Bold', sans-serif;
+}
+
+h2, h3, .filters span, form li, .afficher_plus-text {
+    font-family: 'Raleway-ExtraBold', sans-serif;
+}
+
+h1 {
+    display: none;
+}
+
+li {
+    list-style-type: none;        
+}
+
+a {
+    text-decoration: none;    
+}
+
+footer li {
+    line-height: 200%;
+}
+
+/*---------{HEADER}---------*/
+/*---------{{ALL}}---------*/
+header {
+    display: flex;    
+}
+
+header ul {
+    display: inline-flex;
+}
+
+header h2 {
+    display: none;
+}
+
+header a:visited {
+    color: #0065FC;
+}
+
+/*---------{FORMULAIRE}---------*/
+/*---------{{ALL}}---------*/
+/*---------{{{RECHERCHER}}}---------*/
+.town-location { 
+    display: flex;    
+}
+
+.location-search {
+    background-color: #f2f2f2;
+    cursor: pointer;    
+}
+
+input {
+    border: none;    
+}
+
+.search-field {    
+    border-top: solid 0.06vw #f2f2f2;
+    border-bottom: solid 0.06vw #f2f2f2;    
+}
+
+::placeholder {    
+    color: black;    
+    opacity: 1;
+}
+
+.search-field:focus {
+    background-color: #DEEBFF;    
+    outline: none;              
+}
+
+.search-mobile {        
+    background-repeat: no-repeat;
+    background-position: center;    
+}
+
+input[type="submit"] {
+    background-color: #0065FC;
+    cursor: pointer;
+    transition: opacity 450ms 65ms ease-in-out, transform 350ms ease-in-out;        
+}
+
+input[type="submit"]:active {    
+    background-color: #0065FC;
+    transform: scale(0.95);
+    opacity: 0.3;
+}     
+
+/*---------{FORMULAIRE}---------*/
+/*---------{{ALL}}---------*/
+/*---------{{{FILTRES}}}---------*/
+.filters {
+    display: flex;    
+}
+
+.filter-switches {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.search-checkbox {
+    display: flex;
+    position: relative;
+}
+
+.toggle {
+    position: absolute;
+    background-color: #deebff;    
+    border: none;    
+    cursor: pointer;
+}
+
+.search-checkbox-icon {
+    fill: #0065FC;   
+}
+
+.search-checkbox-icon {
+    background-color: #deebff;    
+}
+
+.filter-category {
+    position: absolute;
+    max-width: fit-content;
+}
+
+.filter-category input {
+    opacity: 0;
+}
+
+.town-info {
+    display: flex;
+    align-items: center;
+}
+
+.info {
+    position: relative;
+}
+
+#info-solid-icon {
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    fill: #0065FC;
+}
+
+/*---------{HEBERGEMENTS}---------*/
+/*---------{{ALL}}---------*/
+.hebergements {
+    display: flex;
+}
+
+.hebergements_section-title {
+    display: none;
+}
+
+/*---------{HEBERGEMENTS}---------*/
+/*---------{{ALL}}---------*/
+/*---------{{{HEBERGEMENTS A MARSEILLE}}}---------*/
+/*---------{{{{CARTES}}}}---------*/
+.hebergements_a_marseille-cards {
+    display: flex;
+}
+
+.hebergements_a_marseille-card {
+    transition: transform 800ms ease-in-out;
+}
+
+.hebergements_a_marseille-card-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.hebergements_a_marseille-card-image img {
+    position: absolute;
+    transition: width 900ms 100ms ease-in-out;
+}
+
+.hebergements_a_marseille-card-body-title {    
+    color: black;          
+    transition: color 0ms 799ms;
+}
+        
+.hebergements_a_marseille-card-body-price {
+    position: relative;
+    color: black;   
+    transition: color 0ms 799ms;
+}
+
+.hebergements_a_marseille-card-body-star-ratings { 
+    display: inline-flex;
+    position: relative;
+}
+
+.star-solid-icon {
+    fill: #0065FC;
+}
+
+.star-solid-icon-grey {
+    fill: #D9D9D9;
+}
+
+.hebergements_a_marseille-card:hover {
+    transform: scale(1.03);    
+}
+
+.hebergements_a_marseille-card:hover .hebergements_a_marseille-card-body-title {
+    color: #0065FC;  
+}
+
+.hebergements_a_marseille-card:hover .hebergements_a_marseille-card-body-price {
+    color: #0065FC;
+}
+
+.hebergements_a_marseille-card:hover .star-solid-icon {
+    fill: gold;
+}
+
+.hebergements_a_marseille-card:hover .star-solid-icon-grey {
+    display: none;
+}
+
+.afficher_plus {
+    display: flex;
+    align-items: center;
+    color: black;
+    max-width: fit-content;
+}
+
+.afficher_plus-text { 
+    color: black;
+}
+
+.afficher_plus:hover .afficher_plus-text {
+    color: #0065FC;
+}
+
+.afficher_plus:hover .plus {    
+    opacity: 1;
+}
+
+.afficher_plus :visited {
+    color: black;
+}
+
+.plus {
+    position: relative;    
+    opacity: 0;
+    border: solid #0065FC;    
+}
+
+.plus-solid-icon {
+    position: absolute;
+    top: 5%;
+    left: 15%;
+    fill: #0065FC;
+}
+
+/*---------{HEBERGEMENTS}---------*/
+/*---------{{ALL}}---------*/
+/*---------{{{LES PLUS POPULAIRES}}}---------*/
+.les_plus_populaires-title {
+    display: inline-flex;
+    margin-bottom: 0.78vw; /* Supprimer et répartir dans les autres styles. */
+}
+
+/*---------{HEBERGEMENTS}---------*/
+/*---------{{ALL}}---------*/
+/*---------{{{LES PLUS POPULAIRES}}}---------*/
+/*---------{{{{CARTES}}}}---------*/
+.les_plus_populaires-cards {
+    display: flex;
+    flex-direction: column;
+}
+
+.les_plus_populaires-card {
+    display: inline-flex;    
+    background-color: #ffffff;
+    transition: transform 800ms ease-in-out;
+}
+
+.les_plus_populaires-card-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.les_plus_populaires-card-image img {
+    position: absolute;    
+    top: 50%;
+    left: 50%;    
+    transform: translate(-50%, -50%);
+    transition: width 900ms 100ms ease-in-out;
+}
+
+#les_plus_populaires-card-image-1 img {
+    width: 170%;    
+}
+
+#les_plus_populaires-card-image-2 img {
+    width: 151%;    
+}
+
+#les_plus_populaires-card-image-3 img {
+    width: 108%;    
+}
+
+.les_plus_populaires-card:hover #les_plus_populaires-card-image-1 img {
+    width: 158%;      
+}
+
+.les_plus_populaires-card:hover #les_plus_populaires-card-image-2 img {
+    width: 141%;      
+}
+
+.les_plus_populaires-card:hover #les_plus_populaires-card-image-3 img {
+    width: 100%;      
+}
+
+.les_plus_populaires-card:hover .star-solid-icon {
+    fill: gold;
+}
+
+.les_plus_populaires-card:hover .star-solid-icon-grey {
+    display: none;
+}
+
+.les_plus_populaires-card-body-title {        
+    color: black;    
+    transition: color 0ms 799ms;
+}
+
+.les_plus_populaires-card-body-price {
+    position: relative;    
+    color: black;    
+    transition: color 0ms 799ms;
+}
+
+.les_plus_populaires-card-body-star-ratings {     
+    display: inline-flex;    
+    position: relative;      
+}
+
+.les_plus_populaires-card:hover {
+    transform: scale(1.03);    
+}
+
+.les_plus_populaires-card:hover .les_plus_populaires-card-body-title {
+    color: #0065FC;  
+}
+
+.les_plus_populaires-card:hover .les_plus_populaires-card-body-price {
+    color: #0065FC;
+}
+
+/*---------{ACTIVITES}---------*/
+/*---------{{ALL}}---------*/
+/*---------{{{ACTIVITES A MARSEILLE}}}---------*/
+.activites_section-title {
+    display: none;
+}
+
+#activites_a_marseille {
+    border-radius: 1.12vw;
+}
+
+.activites_a_marseille-title {
+    margin-bottom: 0.88vw;
+}
+
+/*---------{ACTIVITES}---------*/
+/*---------{{ALL}}---------*/
+/*---------{{{ACTIVITES A MARSEILLE}}}---------*/
+/*---------{{{{CARTES}}}}---------*/
+.activites_a_marseille-cards {
+    display: flex;
+}
+
+/* Vieux Port (1) Calanques (4) */
+.activites_a_marseille-card {
+    transition: transform 800ms ease-in-out;   
+}
+
+.activites_a_marseille-card-image-vieux_port {    
+    position: relative;    
+    border-top-left-radius: 0.78vw;
+    border-top-right-radius: 0.78vw;
+    overflow: hidden;
+}
+
+/* Vieux Port (1) */
+.activites_a_marseille-card-image-vieux_port img {    
+    position: absolute;
+    left: 50%;    
+    transform: translate(-50%, -50%);
+    transition: width 900ms 100ms ease-in-out;
+}
+
+/* Pomègues (2) */
+.activites_a_marseille-card-image-pomegues {    
+    position: relative;    
+    border-top-left-radius: 0.78vw;
+    border-top-right-radius: 0.78vw;
+    overflow: hidden;
+}
+
+.activites_a_marseille-card-image-pomegues img {    
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    transition: width 900ms 100ms ease-in-out;
+}
+
+.activites_a_marseille-card:hover .activites_a_marseille-card-image-pomegues img {
+    width: 110%;      
+}
+
+/* Frioul (3) */
+.activites_a_marseille-card-image-frioul {    
+    position: relative;    
+    border-top-left-radius: 0.78vw;
+    border-top-right-radius: 0.78vw;
+    overflow: hidden;    
+}
+
+.activites_a_marseille-card-image-frioul img {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 900ms 100ms ease-in-out;
+}
+
+.activites_a_marseille-card:hover .activites_a_marseille-card-image-frioul img {
+    width: 109%;      
+}
+
+/* Calanques (4) */
+.activites_a_marseille-card-image-calanques {    
+    position: relative;    
+    border-top-left-radius: 0.78vw;
+    border-top-right-radius: 0.78vw;
+    overflow: hidden;    
+}
+
+.activites_a_marseille-card-image-calanques img {    
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 900ms 100ms ease-in-out;
+}
+
+/* Notre-Dame (5) */
+.activites_a_marseille-card-image-notre_dame {    
+    position: relative;    
+    border-top-left-radius: 0.78vw;
+    border-top-right-radius: 0.78vw;
+    overflow: hidden;
+}
+
+.activites_a_marseille-card-image-notre_dame img {    
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    transition: width 900ms 100ms ease-in-out;
+}
+
+.activites_a_marseille-card:hover .activites_a_marseille-card-image-notre_dame img {
+    width: 103%;      
+}
+
+/* Parc Longchamp (6) */
+.activites_a_marseille-card-image-parc_longchamp {    
+    position: relative;    
+    border-top-left-radius: 0.78vw;
+    border-top-right-radius: 0.78vw;
+    overflow: hidden;
+}
+
+.activites_a_marseille-card-image-parc_longchamp img {    
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 68%;
+    left: 50%;
+    width: 100%;
+    transition: width 900ms 100ms ease-in-out;
+}
+
+.activites_a_marseille-card:hover .activites_a_marseille-card-image-parc_longchamp img {
+    width: 106%;      
+}
+
+.activites_a_marseille-card-body-title {    
+    color: black;
+    transition: color 0ms 799ms;
+}
+
+.activites_a_marseille-card:hover {
+    transform: scale(1.03);    
+}
+
+.activites_a_marseille-card:hover .activites_a_marseille-card-body-title {
+    color: #0065FC;
+}
+
+.activites_a_marseille-card-title:visited {
+    color: black;
+}
+
+/*---------{FOOTER}---------*/
+/*---------{{ALL}}---------*/
+footer h2 {
+    display: none;
+}
+
+footer nav {
+    display: flex;   
+}
+
+footer a {
+    color: black;
+}
+
+footer a:visited {
+    color: black;    
+}
+
+footer a:hover {
+    color: #0065FC;
+}
+
+@media all and (min-width: 992px) {
+    :root {
+        --desktop-screen-ratio: calc(100/1440);
+    }
+
+    h2 {
+        font-size: 1.53vw;
+    }
+    
+    p {
+        font-size: 0.9vw;
+    }
+
+    h3, footer li {
+        font-size: 1vw;
+    }    
+    
+    .filter-category {
+        font-size: 1.12vw;
+    }
+    
+    .afficher_plus-text {
+        font-size: 1.12vw;
+    }
+    
+    #a_propos, #nos_hebergements, #assistance {
+        font-size: 1.22vw;
+    }
+    
+    .search-field, input[type="submit"] {
+        font-size: 1.22vw;
+    }
+
+    header, form, main {        
+        padding: 0 0 0 calc(var(--desktop-screen-ratio)*50vw);
+    }
+
+    /*---------{HEADER}---------*/
+    /*---------{{brkpnt > 992}}---------*/
+    header {
+        flex-direction: row;
+        justify-content: space-between;        
+    }
+
+    #logo_booki {
+        margin: calc(var(--desktop-screen-ratio)*52vw) 0 calc(var(--desktop-screen-ratio)*50vw) calc(var(--desktop-screen-ratio)*20vw);        
+        width: calc(var(--desktop-screen-ratio)*76vw);
+    }
+
+    header nav {
+        padding: 30px calc(var(--desktop-screen-ratio)*100vw) 0 0;        
+    }
+
+    header nav ul {
+        padding: 0;
+    }
+
+    header nav span {
+        padding: 42px 30px 0vw 30px;
+    }
+    
+    header nav span:hover {            
+        border-top: 3px solid #0065FC;        
+    }
+
+    /*---------{FORMULAIRE}---------*/
+    /*---------{{{RECHERCHER}}}---------*/
+    /*---------{{brkpnt > 992}}---------*/
+    .location-search {
+        width: 3.53vw;
+        height: 3.46vw;
+        border-top-left-radius: 1.12vw;
+        border-bottom-left-radius: 1.12vw;
+    }
+
+    .map-marker-icon {
+        width: 0.88vw;
+        transform: translate(1.53vw, 1.02vw);
+    }
+    
+    label {    
+        margin-bottom: 2.1vw;
+    }    
+
+    .search-field {
+        width: 15.91vw;
+        height: 3.46vw;
+        border-top: 0.06vw;
+        border-bottom: 0.06vw;    
+        padding-left: 1.19vw;
+    }
+
+    .search-mobile {
+        display: none;        
+    }
+
+    input[type="submit"] {
+        width: 9.11vw;
+        height: 3.46vw;
+        border-top-right-radius: 1.12vw;
+        border-bottom-right-radius: 1.12vw;
+        color: #ffffff;
+    }
+
+    /*---------{FORMULAIRE}---------*/
+    /*---------{{brkpnt > 992}}---------*/
+    /*---------{{{FILTRES}}}---------*/
+    .filters-title {
+        transform: translate(0vw, 0.88vw);
+    }
+
+    .search-checkbox {        
+        margin: 0vw 1.36vw 1.36vw 0vw;
+        height: 3.4vw;
+        border: solid 0.13vw #d9d9d9;
+        border-radius: 1.7vw;
+    }
+
+    .toggle {    
+    top: -4%;
+    left: -2%;
+    width: 3.4vw;
+    height: 3.4vw;
+    border-radius: 3.4vw;
+    transition: transform 400ms ease-out;
+    }
+
+    .search-checkbox-icon {
+        height: calc(var(--desktop-screen-ratio)*21vw);
+    }
+
+    #search-checkbox-01 {
+        width: 13.19vw;
+    }
+    
+    #search-checkbox-02 {
+        width: 10.33vw;
+    }
+    
+    #search-checkbox-03 {
+        width: 12.51vw;
+    }
+    
+    #search-checkbox-04 {
+        width: 16.45vw;
+    }
+
+    .filter-category {        
+        z-index: -1;        
+        margin: calc(var(--desktop-screen-ratio)*15vw) 0 0 calc(var(--desktop-screen-ratio)*45vw);        
+        transition: transform 400ms ease-out;        
+    }    
+
+    #toggle-01:active {
+        transform: translate(calc(var(--desktop-screen-ratio)*143vw), 0);
+    }
+    
+    #toggle-02:active {
+        transform: translate(calc(var(--desktop-screen-ratio)*101vw), 0);
+    }
+    
+    #toggle-03:active {
+        transform: translate(calc(var(--desktop-screen-ratio)*133vw), 0);
+    }
+    
+    #toggle-04:active {
+        transform: translate(calc(var(--desktop-screen-ratio)*192vw), 0);
+    }
+    
+    .toggle:active + .filter-category {    
+        transform: translate(0, 2.50vw);
+        color: #0065FC;
+    }
+
+    #toggle-01:active + .filter-category input {
+        opacity: 1;
+        transition: opacity 350ms 250ms;
+    }    
+
+    #toggle-02:active + .filter-category input {
+        opacity: 1;
+        transition: opacity 350ms 250ms;
+    }    
+
+    #toggle-03:active + .filter-category input {
+        opacity: 1;    
+        transition: opacity 350ms 250ms;
+    }
+
+    #toggle-04:active + .filter-category input {
+        opacity: 1;
+        transition: opacity 350ms 250ms;
+    }
+
+    input[type="checkbox"] {
+        width: calc(var(--desktop-screen-ratio)*10vw);
+    }
+
+    .info { 
+        margin:  0 calc(var(--desktop-screen-ratio)*24vw) 0 0;
+        width: calc(var(--desktop-screen-ratio)*24vw);
+        height: calc(var(--desktop-screen-ratio)*24vw);
+        border: solid 0.06vw #d9d9d9;
+        border-radius: 3.4vw;
+    }
+    
+    #info-solid-icon {        
+        height: calc(var(--desktop-screen-ratio)*12vw);
+    }    
+    
+    /*---------{HEBERGEMENTS}---------*/
+    /*---------{{brkpnt > 992}}---------*/
+    /*---------{{{HEBERGEMENTS A MARSEILLE}}}---------*/
+    #hebergements_a_marseille {        
+        background-color: #f2f2f2;
+        border-radius: 1.12vw;
+        padding-left: 2.72vw;
+        padding-top: calc(var(--desktop-screen-ratio)*46vw);
+        width: calc(var(--desktop-screen-ratio)*880vw);
+    }
+
+    .hebergements_a_marseille-title {
+        margin-bottom: 1.93vw;
+    }
+
+    .hebergements_a_marseille-cards {
+        flex-direction: row;        
+        flex-wrap: wrap;
+    }
+
+    .hebergements_a_marseille-card {   
+        margin: 0 2.1vw calc(var(--desktop-screen-ratio)*30vw) 0;
+        height: 13.53vw;
+        border-radius: 1.12vw;
+        box-shadow: 0 calc(var(--desktop-screen-ratio)*12vw) calc(var(--desktop-screen-ratio)*12vw) 0 #d9d9d9;
+        background-color: #ffffff;
+        padding: 0.34vw;
+    }
+
+    .hebergements_a_marseille-card-image {     
+        width: 16.04vw;
+        height: 7.75vw;
+        border-radius: 0.78vw 0.78vw 0 0;
+    }
+
+    .hebergements_a_marseille-card-image img {        
+        top: 50%;
+        left: 50%;    
+        width: 104%;    
+        transform: translate(-50%, -50%);        
+    }
+
+    .hebergements_a_marseille-card:hover .hebergements_a_marseille-card-image img {
+        width: 100%;
+    }
+
+    .hebergements_a_marseille-card-body {        
+        padding: 0 0 0 0.81vw;        
+    }    
+
+    .hebergements_a_marseille-card-body-title {
+        transform: translate(0, calc(var(--desktop-screen-ratio)*-5vw));
+    }
+            
+    .hebergements_a_marseille-card-body-price {        
+        transform: translate(0, calc(var(--desktop-screen-ratio)*-13vw));
+    }
+    
+    .hebergements_a_marseille-card-body-star-ratings {
+        position: absolute;        
+        transform: translate(0, calc(var(--desktop-screen-ratio)*-19vw));
+    }
+
+    .star-solid-icon {
+        margin: 0 calc(var(--desktop-screen-ratio)*2vw) 0 0;
+        width: calc(var(--desktop-screen-ratio)*12vw);
+    }
+    
+    .star-solid-icon-grey {
+        width: calc(var(--desktop-screen-ratio)*12vw);
+    }
+
+    .afficher_plus {
+        margin: 0 0 0 calc(var(--desktop-screen-ratio)*45px);
+        background-color: #f2f2f2;
+    }
+
+    .afficher_plus span {
+        margin-left: 0.34vw;
+    }
+
+    .plus {        
+        margin: 0 0 0 calc(var(--desktop-screen-ratio)*10vw);      
+        width: calc(var(--desktop-screen-ratio)*25vw);
+        height: calc(var(--desktop-screen-ratio)*25vw);        
+        border-radius: 3.4vw;
+    }
+    
+    .plus-solid-icon {  
+        width: calc(var(--desktop-screen-ratio)*15vw);        
+    }
+
+    /*---------{HEBERGEMENTS}---------*/
+    /*---------{{brkpnt > 992}}---------*/  
+    /*---------{{{LES PLUS POPULAIRES}}}---------*/
+    #les_plus_populaires {
+        margin-left: 1.73vw;
+        width: 28.56vw;
+        border-radius: 1.12vw;
+        background-color: #f2f2f2;
+        padding-right: 1.25vw;
+        padding-left: 1.25vw;
+        padding-top: 3.19vw;
+    }
+
+    .chart-line-icon {
+        margin: 0 0 0 calc(var(--desktop-screen-ratio)*110vw);
+        width: calc(var(--desktop-screen-ratio)*24vw);        
+    }
+
+    /*---------{HEBERGEMENTS}---------*/
+    /*---------{{brkpnt > 992}}---------*/  
+    /*---------{{{LES PLUS POPULAIRES}}}---------*/
+    /*---------{{{{CARTES}}}}---------*/
+    .les_plus_populaires-card {        
+        margin-bottom: 30px;
+        width: 23.32vw;
+        height: 9.79vw;
+        box-shadow: 0 calc(var(--desktop-screen-ratio)*12vw) calc(var(--desktop-screen-ratio)*12vw) 0 #d9d9d9;
+        border-radius: 1.12vw;
+        padding: 0.34vw;
+    }
+
+    .les_plus_populaires-card-image {        
+        width: 8.63vw;
+        height: 9.11vw;
+        border-top-left-radius: 0.78vw;
+        border-bottom-left-radius: 0.78vw; 
+    }    
+    
+    .les_plus_populaires-card-body {
+        padding: 0 0 0 calc(var(--desktop-screen-ratio)*20vw);
+    }
+
+    .les_plus_populaires-card-body-title {
+        width: 10.2vw;        
+    }
+
+    .les_plus_populaires-card-body-star-ratings {
+        padding: calc(var(--desktop-screen-ratio)*20vw) 0 0 0;
+    }
+
+    /*---------{ACTIVITES}---------*/
+    /*---------{{brkpnt > 992}}---------*/
+    #activites_a_marseille {
+        display: flex;     
+        flex-direction: column;        
+        flex-wrap: wrap;
+    }
+
+    /*---------{ACTIVITES}---------*/
+    /*---------{{brkpnt > 992}}---------*/
+    /*---------{{{ACTIVITES A MARSEILLE}}}---------*/
+    /*---------{{{{CARTES}}}}---------*/
+    .activites_a_marseille-cards {        
+        flex-direction: column;        
+        flex-wrap: wrap;
+        height: 34vw;
+    }
+
+    .activites_a_marseille-card {     
+        margin-bottom: 2.92vw;
+        width: 20.53vw;
+        box-shadow: 0 calc(var(--desktop-screen-ratio)*3vw) calc(var(--desktop-screen-ratio)*3vw) 0 #d9d9d9;
+        border-radius: calc(var(--desktop-screen-ratio)*17vw);
+    }
+    
+    /* Vieux Port (1) */
+    #vieux_port {
+        height: 33.66vw;
+    }
+
+    .activites_a_marseille-card-image-vieux_port { 
+        height: 26.38vw;
+    }
+
+    .activites_a_marseille-card-image-vieux_port img {    
+        top: 57%;
+        width: 223%;        
+    }
+
+    .activites_a_marseille-card:hover .activites_a_marseille-card-image-vieux_port img {
+        width: 227%;
+    }    
+
+    /* Pomègues (2) */
+    #fort_de_pomegues {        
+        height: 15.98vw;
+    }
+
+    .activites_a_marseille-card-image-pomegues { 
+        height: 12.24vw;
+    }
+
+    .activites_a_marseille-card-image-pomegues img {   
+        top: 65.5%;                    
+    }
+
+    /* Frioul (3) */
+    #iles_du_frioul {        
+        height: 11.15vw;
+    }
+
+    .activites_a_marseille-card-image-frioul {    
+        height: 7.41vw;
+    }
+
+    .activites_a_marseille-card-image-frioul img {
+        position: absolute;
+        top: 76%;   
+        width: 100%;
+    }
+
+    /* Calanques (4) */
+    #parc_national_des_calanques {
+        height: 33.66vw;
+    }
+
+    .activites_a_marseille-card-image-calanques {
+        height: 26.38vw;
+    }
+
+    .activites_a_marseille-card-image-calanques img {   
+        top: 57%; 
+        width: 223%;
+    }
+
+    .activites_a_marseille-card:hover .activites_a_marseille-card-image-calanques img {
+        width: 227%;      
+    }
+
+    .activites_a_marseille-card-body-title {
+        padding-left: 1.36vw;
+        padding-bottom: 1.36vw;
+    }
+
+    /* Notre-Dame (5) */
+    #notre_dame_de_la_garde {
+        height: 13.26vw;
+    }
+
+    .activites_a_marseille-card-image-notre_dame {    
+        height: 9.38vw;
+    }
+
+    /* Parc Longchamp (6) */
+    #parc_longchamp {
+        height: 14.14vw;
+    }
+
+    .activites_a_marseille-card-image-parc_longchamp { 
+        height: 10.4vw;
+    }
+
+    /*---------{fOOTER}---------*/
+    /*---------{{brkpnt > 992}}---------*/
+    footer {
+        background-color: #f2f2f2;        
+    }
+
+    footer nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 0 0 0 3.4vw;
+        white-space: nowrap;        
+    }
+
+    footer nav ul {
+        padding: 0;                
+    }
+
+    #a_propos {        
+        margin: 0 calc(var(--desktop-screen-ratio)*270vw) 0 0;
+    }
+    
+    #nos_hebergements {        
+        margin: 0 calc(var(--desktop-screen-ratio)*291vw) 0 0;
+    }    
+}
+
+@media all and (min-width: 768px) and (max-width: 991px) {
+    :root {
+        --tablet-screen-ratio: calc(100/879);
+    }
+
+    h2 {
+        font-size: calc(var(--tablet-screen-ratio)*26vw);
+    }
+    
+    h3, header span, p, .filter-category, .afficher_plus-text, footer li {
+        font-size: calc(var(--tablet-screen-ratio)*20vw);
+    }
+
+    .search-field, input[type="submit"], #a_propos, #nos_hebergements, #assistance {
+        font-size: calc(var(--tablet-screen-ratio)*21vw);
+    }
+
+    /*---------{HEADER}---------*/
+    /*---------{{brkpnt >= 768, <= 991}}---------*/
+    header {
+        align-items: center;
+        padding: calc(var(--tablet-screen-ratio)*40vw);
+    }
+
+    nav ul {
+        padding: 0;        
+    }
+
+    #logo_booki {
+        width: calc(var(--tablet-screen-ratio)*100vw);
+    }
+
+    nav span {
+        margin: 0 0 0 calc(var(--tablet-screen-ratio)*135vw);
+        border-left: calc(var(--tablet-screen-ratio)*4vw);
+        padding: calc(var(--tablet-screen-ratio)*20vw) calc(var(--tablet-screen-ratio)*40vw) calc(var(--tablet-screen-ratio)*20vw) calc(var(--tablet-screen-ratio)*10vw);        
+    }
+    
+    nav span:hover {          
+        border-left: solid #0065FC;
+    }
+
+    /*---------{FORMULAIRE}---------*/
+    /*---------{{brkpnt >= 768, <= 991}}---------*/
+    form {
+        padding: 0 0 0 calc(var(--tablet-screen-ratio)*20vw);
+    }
+
+    #form-title {
+        margin: 0 0 calc(var(--tablet-screen-ratio)*4vw) 0;
+        max-width: fit-content;        
+    }   
+
+    /*---------{FORMULAIRE}---------*/
+    /*---------{{brkpnt >= 768, <= 991}---------*/
+    /*---------{{{RECHERCHER}}}---------*/
+    .town-location {
+        padding: 0 0 0 calc(var(--tablet-screen-ratio)*20vw);
+    }
+
+    .location-search {
+        width: calc(var(--tablet-screen-ratio)*52vw);
+        height: calc(var(--tablet-screen-ratio)*51vw);
+        border-top-left-radius: calc(var(--tablet-screen-ratio)*16vw);
+        border-bottom-left-radius: calc(var(--tablet-screen-ratio)*16vw);
+    }
+    
+    .map-marker-icon {
+        width: calc(var(--tablet-screen-ratio)*13vw);
+        transform: translate(calc(var(--tablet-screen-ratio)*20vw), calc(var(--tablet-screen-ratio)*15vw));
+    }
+
+    .search-field {
+        margin: 0 0 calc(var(--tablet-screen-ratio)*60vw) 0;
+        width: calc(var(--tablet-screen-ratio)*240vw);
+        height: calc(var(--tablet-screen-ratio)*51vw);
+        border-top-right-radius: calc(var(--tablet-screen-ratio)*16vw);
+        border-bottom-right-radius: calc(var(--tablet-screen-ratio)*16vw);        
+        padding: 0 0 0 calc(var(--tablet-screen-ratio)*17vw);
+    }
+
+    .search-desktop {
+        display: none;
+    }   
+
+    input[type="submit"] {
+        width: calc(var(--tablet-screen-ratio)*51vw);
+        height: calc(var(--tablet-screen-ratio)*51vw);
+        border-radius: calc(var(--tablet-screen-ratio)*16vw);
+        background-size: calc(var(--tablet-screen-ratio)*17vw);
+       
+    }
+
+    /*---------{FORMULAIRE}---------*/
+    /*---------{{brkpnt >= 768, <= 991}}---------*/
+    /*---------{{{FILTRES}}}---------*/
+    .filters {
+        flex-direction: column;        
+    }
+
+    .filters-title {
+        max-width: fit-content;        
+    }
+
+    .filter-switches {   
+        flex-direction: row;
+        width: 60%;        
+    }
+
+    .search-checkbox {
+        margin: 0 calc(var(--tablet-screen-ratio)*11vw) calc(var(--tablet-screen-ratio)*13vw) 0;
+        height: calc(var(--tablet-screen-ratio)*50vw);
+        border: solid calc(var(--tablet-screen-ratio)*4vw) #d9d9d9;
+        border-radius: calc(var(--tablet-screen-ratio)*50vw);
+    }
+
+    #search-checkbox-01 {
+        width: calc(var(--tablet-screen-ratio)*200vw);
+    }
+    
+    #search-checkbox-02 {
+        width: calc(var(--tablet-screen-ratio)*163vw);
+    }
+    
+    #search-checkbox-03 {
+        width: calc(var(--tablet-screen-ratio)*192vw);
+    }
+    
+    #search-checkbox-04 {
+        width: calc(var(--tablet-screen-ratio)*246vw);
+    }
+    
+    form ul {
+        padding: 0;
+    }
+    
+    .search-checkbox {
+        position: relative;     
+        margin: 0 calc(var(--tablet-screen-ratio)*10vw) calc(var(--tablet-screen-ratio)*20vw) 0;        
+    }    
+
+    .filter-category {
+        position: absolute;
+        z-index: 0;        
+        margin: calc(var(--tablet-screen-ratio)*10vw) 0 0 calc(var(--tablet-screen-ratio)*35vw);
+    }
+
+    .toggle {
+        position: absolute;
+        z-index: 1;
+        top: -6.5%;
+        left: -2%;
+        width: calc(var(--tablet-screen-ratio)*50vw);
+        height: calc(var(--tablet-screen-ratio)*50vw);        
+        border-radius: calc(var(--tablet-screen-ratio)*50vw);        
+        transition: width 400ms ease-out;
+    }
+
+    .search-checkbox-icon {
+        position: relative;
+        height: calc(var(--tablet-screen-ratio)*21vw);
+    }
+    
+    #toggle-01:active {
+        
+        width: calc(var(--tablet-screen-ratio)*201vw);        
+    }
+
+    #toggle-01:active + .filter-category {
+        display: none;
+        color: #0065FC;
+    }
+
+    #toggle-01:active + .filter-category input {
+        opacity: 1;
+        transition: opacity 350ms 250ms;
+    }
+    
+    #toggle-02:active {
+        width: calc(var(--tablet-screen-ratio)*163vw);        
+    }
+
+    #toggle-02:active + .filter-category input {
+        opacity: 1;
+        transition: opacity 350ms 250ms;
+    }
+    
+    #toggle-03:active {
+        width: calc(var(--tablet-screen-ratio)*193vw);
+    }
+
+    #toggle-03:active + .filter-category input {
+        opacity: 1;
+        transition: opacity 350ms 250ms;
+    }
+    
+    #toggle-04:active {
+        width: calc(var(--tablet-screen-ratio)*248vw);        
+    }
+
+    #toggle-04:active + .filter-category {    
+        /* transform: translate(90px, 0px);    
+        color: #0065FC; */
+    }
+
+    #toggle-04:active + .filter-category input {
+        opacity: 1;
+        transition: opacity 350ms 250ms;
+    }
+
+    .info { 
+        margin: 0 calc(var(--tablet-screen-ratio)*24vw) 0 0 ;
+        width: calc(var(--tablet-screen-ratio)*24vw);
+        height: calc(var(--tablet-screen-ratio)*24vw);
+        border: solid calc(var(--tablet-screen-ratio)*2vw) #d9d9d9;
+        border-radius: calc(var(--tablet-screen-ratio)*24vw);
+    }
+    
+    #info-solid-icon {        
+        height: calc(var(--tablet-screen-ratio)*12vw);
+    }
+
+    /*-------{HEBERGEMENTS}-------*/
+    /*-------{{brkpnt >= 768, <= 991}}-------*/
+    .hebergements {
+        flex-direction: column;        
+    }
+
+    /*-------{HEBERGEMENTS}-------*/
+    /*-------{{brkpnt >= 768, <= 991}-------*/
+    /*-------{{{HEBERGEMENTS A MARSEILLE}}}-------*/
+    #hebergements_a_marseille {        
+        border-radius: calc(var(--tablet-screen-ratio)*33vw);
+    }
+
+    .hebergements_a_marseille-title {
+        padding-left: calc(var(--tablet-screen-ratio)*20vw);
+        max-width: fit-content;        
+    }
+
+    /*-------{HEBERGEMENTS}-------*/
+    /*-------{{brkpnt >= 768, <= 991}-------*/
+    /*-------{{{HEBERGEMENTS A MARSEILLE}}}-------*/
+    /*-------{{{{CARTES}}}}-------*/
+    .hebergements_a_marseille-cards {
+        display: inline-flex;
+        flex-wrap: wrap;
+    }
+
+    .hebergements_a_marseille-card {
+        margin: calc(var(--tablet-screen-ratio)*20vw);
+        width: calc(var(--tablet-screen-ratio)*385vw);
+        height: calc(var(--tablet-screen-ratio)*313vw);
+        box-shadow: 0 calc(var(--tablet-screen-ratio)*12vw) calc(var(--tablet-screen-ratio)*12vw) 0 #d9d9d9;
+        border-radius: calc(var(--tablet-screen-ratio)*17vw);
+        padding: calc(var(--tablet-screen-ratio)*7vw);
+        overflow: hidden;
+    }
+
+    .hebergements_a_marseille-card-image {        
+        height: calc(var(--tablet-screen-ratio)*199vw);
+        border-radius: calc(var(--tablet-screen-ratio)*17vw) calc(var(--tablet-screen-ratio)*17vw) 0 0;
+    }
+
+    .hebergements_a_marseille-card-image img {        
+        top: 50%;
+        left: 50%;    
+        width: 106%;
+        transform: translate(-50%, -50%);
+    }
+
+    .hebergements_a_marseille-card:hover .hebergements_a_marseille-card-image img {
+        width: 100%;      
+    }
+
+    .hebergements_a_marseille-card-body {
+        padding: 0 0 0 calc(var(--tablet-screen-ratio)*12vw);       
+    }
+
+    .hebergements_a_marseille-card-body-title {
+        transform: translate(0, calc(var(--tablet-screen-ratio)*-5vw));        
+    }
+            
+    .hebergements_a_marseille-card-body-price {
+        transform: translate(0, calc(var(--tablet-screen-ratio)*-20vw));        
+    }
+    
+    .hebergements_a_marseille-card-body-star-ratings { 
+        transform: translate(0, calc(var(--tablet-screen-ratio)*-32vw));
+    }
+
+    .star-solid-icon {
+        margin: 0 calc(var(--tablet-screen-ratio)*2vw) 0 0;
+        width: calc(var(--tablet-screen-ratio)*14vw);
+    }
+    
+    .star-solid-icon-grey {
+        width: calc(var(--tablet-screen-ratio)*14vw);
+    }
+
+    .afficher_plus {       
+        border-bottom-right-radius: 33px; 
+        border-bottom-left-radius: 33px;
+        padding-left: 40px;
+        background-color: #f2f2f2;            
+    }
+
+    .plus {
+    margin: 0 0 0 calc(var(--tablet-screen-ratio)*10vw);      
+    width: calc(var(--tablet-screen-ratio)*25vw);
+    height: calc(var(--tablet-screen-ratio)*25vw);
+    border-radius: 3.4vw;
+    }
+
+    .plus-solid-icon {
+        width: calc(var(--tablet-screen-ratio)*15vw);
+    }
+
+    /*-------{HEBERGEMENTS}-------*/
+    /*-------{{brkpnt >= 768, <= 991}-------*/
+    /*-------{{{LES PLUS POPULAIRES}}}-------*/
+    .les_plus_populaires-title {
+        margin: 0 0 0 calc(var(--tablet-screen-ratio)*20%);
+    }    
+
+    .chart-line-icon {
+        margin: 0 0 0 calc(var(--tablet-screen-ratio)*150vw);
+        width: calc(var(--tablet-screen-ratio)*24vw);
+    }
+    
+    .les_plus_populaires-card {
+        margin: 0 calc(var(--tablet-screen-ratio)*20%) calc(var(--tablet-screen-ratio)*17%) calc(var(--tablet-screen-ratio)*20%);
+        width: calc(var(--tablet-screen-ratio)*427%);
+        height: calc(var(--tablet-screen-ratio)*144%);
+        border-radius: calc(var(--tablet-screen-ratio)*17vw);
+        box-shadow: 0 calc(var(--tablet-screen-ratio)*12vw) calc(var(--tablet-screen-ratio)*12vw) 0 #d9d9d9;
+        padding: calc(var(--tablet-screen-ratio)*5%);
+    }
+
+    .les_plus_populaires-card-image {
+        width: calc(var(--tablet-screen-ratio)*127vw);
+        height: calc(var(--tablet-screen-ratio)*134vw);
+        border-radius: calc(var(--tablet-screen-ratio)*14vw) 0 0 calc(var(--tablet-screen-ratio)*14vw);
+    }
+    
+    .les_plus_populaires-card-body {
+        margin: calc(var(--tablet-screen-ratio)*-15vw) 0 0 0;
+        padding: 0 0 0 calc(var(--tablet-screen-ratio)*20vw);
+    }
+    
+    /*-------{ACTIVITES}-------*/
+    /*-------{{brkpnt >= 768, <= 991}-------*/
+    /*-------{{{ACTIVITES A MARSEILLE}}}-------*/
+    #activites_a_marseille {        
+        padding: calc(var(--tablet-screen-ratio)*20vw) 0 calc(var(--tablet-screen-ratio)*40vw) 0;
+        background-color: #f2f2f2;
+    }
+
+    .activites_a_marseille-title {
+        width: fit-content;
+        padding: 0 0 0 calc(var(--tablet-screen-ratio)*20vw);
+    }
+    
+
+    /*-------{ACTIVITES}-------*/
+    /*-------{{brkpnt >= 768, <= 991}-------*/
+    /*-------{{{ACTIVITES A MARSEILLE}}}-------*/
+    /*-------{{{{CARTES}}}}-------*/
+    .activites_a_marseille-cards {            
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    /* Vieux Port (1) Calanques (4) */
+    .activites_a_marseille-card {
+        margin: 0 0 calc(var(--tablet-screen-ratio)*20%) calc(var(--tablet-screen-ratio)*23%);
+        width: calc(var(--tablet-screen-ratio)*400%);
+        height: calc(var(--tablet-screen-ratio)*228%);
+        box-shadow: 0 calc(var(--tablet-screen-ratio)*3vw) calc(var(--tablet-screen-ratio)*3vw) 0 #d9d9d9;
+        border-radius: calc(var(--tablet-screen-ratio)*17vw);
+    }    
+
+     /* Vieux Port (1) */
+     .activites_a_marseille-card-image-vieux_port {    
+        height: calc(var(--tablet-screen-ratio)*134vw);
+        border-radius: calc(var(--tablet-screen-ratio)*17vw) calc(var(--tablet-screen-ratio)*17vw) 0 0;
+    }
+
+     .activites_a_marseille-card-image-vieux_port img {
+        top: 71%;        
+        width: 100%;
+    }
+
+    .activites_a_marseille-card:hover .activites_a_marseille-card-image-vieux_port img {
+        width: 103%;      
+    }
+
+    /* Pomègues (2) */
+    .activites_a_marseille-card-image-pomegues {    
+        height: calc(var(--tablet-screen-ratio)*134vw);
+        border-radius: calc(var(--tablet-screen-ratio)*17vw) calc(var(--tablet-screen-ratio)*17vw) 0 0;
+    }
+
+    .activites_a_marseille-card-image-pomegues img {
+        top: 70%;        
+    }
+
+    /* Frioul (3) */
+    .activites_a_marseille-card-image-frioul {    
+        height: calc(var(--tablet-screen-ratio)*134vw);
+        border-radius: calc(var(--tablet-screen-ratio)*17vw) calc(var(--tablet-screen-ratio)*17vw) 0 0;
+    }
+
+    .activites_a_marseille-card-image-frioul img {    
+        top: 71%;
+        width: 100%;        
+    }    
+
+    /* Calanques (4) */
+    .activites_a_marseille-card-image-calanques {    
+        height: calc(var(--tablet-screen-ratio)*134vw);
+        border-radius: calc(var(--tablet-screen-ratio)*17vw) calc(var(--tablet-screen-ratio)*17vw) 0 0;
+    }
+
+    .activites_a_marseille-card-image-calanques img { 
+        top: 70%;
+        width: 100%;
+    }
+
+    .activites_a_marseille-card:hover .activites_a_marseille-card-image-calanques img {
+        width: 105%;
+    }
+
+    /* Notre-Dame (5) */
+    .activites_a_marseille-card-image-notre_dame {    
+        height: calc(var(--tablet-screen-ratio)*134vw);
+        border-radius: calc(var(--tablet-screen-ratio)*17vw) calc(var(--tablet-screen-ratio)*17vw) 0 0;
+    }
+
+    /* Longchamp (6) */
+    .activites_a_marseille-card-image-parc_longchamp {    
+        height: calc(var(--tablet-screen-ratio)*134vw);
+        border-radius: calc(var(--tablet-screen-ratio)*17vw) calc(var(--tablet-screen-ratio)*17vw) 0 0;
+    }
+
+    .activites_a_marseille-card-body-title {
+        transform: translate(20px, 0px);
+    }
+
+    /*-------{FOOTER}-------*/
+    /*-------{{brkpnt >= 768, <= 991}-------*/
+    footer {
+        padding: 0 0  calc(var(--tablet-screen-ratio)*40vw);
+        gap: 20vw;
+    }
+
+    footer nav {    
+        margin: 0 0 0 calc(var(--tablet-screen-ratio)*40vw);
+    }
+
+    .site-map-category {
+        min-width: calc(var(--tablet-screen-ratio)*100%);
+    }
+
+    #nos_hebergements {
+        padding: 0 0 0 calc(var(--tablet-screen-ratio)*55%);
+    }
+
+    #assistance {
+        padding: 0 0 0 calc(var(--tablet-screen-ratio)*120%);
+    }
+}
+
+@media all and (max-width: 767px) {
+    :root {
+        --mobile-screen-ratio: calc(100/375);
+    }
+
+    body {
+        display: flex;
+    }
+
+    h2 {
+    font-size: calc(var(--mobile-screen-ratio)*21vw);
+    }
+
+    h3, header span, p, .filter-category, .afficher_plus-text, footer li {
+        font-size: calc(var(--mobile-screen-ratio)*15vw);
+    }
+
+    .search-field, input[type="submit"], #a_propos, #nos_hebergements, #assistance {
+        font-size: calc(var(--mobile-screen-ratio)*16vw);
+    }
+    
+    /*---------{HEADER}---------*/
+    /*---------{{brkpnt < 768}}---------*/
+    header {
+        flex-direction: column;        
+        align-items: center;
+        padding: calc(var(--mobile-screen-ratio)*29vw) 0 0 0;        
+    }
+        
+    #logo_booki {
+        width: calc(var(--mobile-screen-ratio)*85vw);
+        margin: 0 0 calc(var(--mobile-screen-ratio)*42vw) 0;        
+    }
+
+    nav {
+        width: 100%;
+        height: calc(var(--mobile-screen-ratio)*35vw);                
+    }
+
+    nav ul {
+        padding: 0;
+        margin: 0;
+    }    
+
+    nav span {        
+        border-bottom: calc(var(--mobile-screen-ratio)*3vw);        
+    }
+
+    #category-link_hebergements {
+        padding: 0 calc(var(--mobile-screen-ratio)*36vw) calc(var(--mobile-screen-ratio)*17vw) calc(var(--mobile-screen-ratio)*36vw);
+    }
+
+    nav span:hover {
+        border-bottom: solid #0065FC;
+    }    
+
+    #category-link_activites {
+        padding: 0 calc(var(--mobile-screen-ratio)*65vw) calc(var(--mobile-screen-ratio)*17vw) calc(var(--mobile-screen-ratio)*60vw);        
+    }
+
+    /*---------{FORMULAIRE}---------*/
+    /*---------{{brkpnt < 768}}---------*/
+    #form-title {
+        width: calc(var(--mobile-screen-ratio)*327vw);
+        padding: calc(var(--mobile-screen-ratio)*31vw) 0 0 calc(var(--mobile-screen-ratio)*20vw);
+    }    
+
+    form p {
+        margin-bottom: calc(var(--mobile-screen-ratio)*39vw);
+    }
+
+    /*---------{FORMULAIRE}---------*/
+    /*---------{{brkpnt < 768}---------*/
+    /*---------{{{RECHERCHER}}}---------*/
+    .town-location {
+        padding: 0 0 0 calc(var(--mobile-screen-ratio)*20vw);
+    }
+
+    .location-search {
+        width: calc(var(--mobile-screen-ratio)*52vw);
+        height: calc(var(--mobile-screen-ratio)*51vw);
+        border-top-left-radius: calc(var(--mobile-screen-ratio)*16vw);
+        border-bottom-left-radius: calc(var(--mobile-screen-ratio)*16vw);        
+    }
+    
+    .map-marker-icon {
+        width: calc(var(--mobile-screen-ratio)*13vw);
+        transform: translate(calc(var(--mobile-screen-ratio)*20vw), calc(var(--mobile-screen-ratio)*15vw));
+    }
+
+    .search-field {
+        margin-bottom: calc(var(--mobile-screen-ratio)*37vw);
+        width: calc(var(--mobile-screen-ratio)*230vw);
+        height: calc(var(--mobile-screen-ratio)*51vw);
+        border-top-right-radius: calc(var(--mobile-screen-ratio)*16vw);
+        border-bottom-right-radius: calc(var(--mobile-screen-ratio)*16vw);
+        padding: 0 0 0 calc(var(--mobile-screen-ratio)*17vw);
+    }
+
+    .search-desktop {
+        display: none;
+    }
+
+    input[type="submit"] {
+        width: calc(var(--mobile-screen-ratio)*51vw);
+        height: calc(var(--mobile-screen-ratio)*51vw);
+        border-radius: calc(var(--mobile-screen-ratio)*16vw);
+        background-size: calc(var(--mobile-screen-ratio)*17vw);
+    }
+
+    /*---------{FORMULAIRE}---------*/
+    /*---------{{brkpnt < 768}}---------*/
+    /*---------{{{FILTRES}}}---------*/ 
+    .filters {
+        flex-direction: column;               
+    }        
+
+    .filters-title {
+        margin: 0 0 calc(var(--mobile-screen-ratio)*19vw) 0;
+        padding: 0 0 0 calc(var(--mobile-screen-ratio)*20vw);
+    }
+
+    .filter-switches {            
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 0 0 0 calc(var(--mobile-screen-ratio)*20vw);
+    }
+    
+    .search-checkbox {
+        position: relative;
+        margin: 0 calc(var(--mobile-screen-ratio)*11vw) calc(var(--mobile-screen-ratio)*13vw) 0;
+        height: calc(var(--mobile-screen-ratio)*50vw);
+        border: solid calc(var(--mobile-screen-ratio)*2vw) #d9d9d9;
+        border-radius: calc(var(--mobile-screen-ratio)*50vw);
+    }
+
+    #search-checkbox-01 {
+        width: calc(var(--mobile-screen-ratio)*177vw);
+    }
+    
+    #search-checkbox-02 {
+        width: calc(var(--mobile-screen-ratio)*140vw);
+    }
+    
+    #search-checkbox-03 {
+        width: calc(var(--mobile-screen-ratio)*169vw);
+    }
+    
+    #search-checkbox-04 {
+        width: calc(var(--mobile-screen-ratio)*223vw);
+    }
+    
+    .filter-category {
+        position: absolute;
+        z-index: -1;
+        top: 30%;
+        left: 27%;        
+    }    
+    
+    #toggle-01:active + .filter-category {
+        color: #0065FC;
+    }
+    
+    .toggle {
+        width: calc(var(--mobile-screen-ratio)*50vw);
+        height: calc(var(--mobile-screen-ratio)*50vw);
+        border-radius: calc(var(--mobile-screen-ratio)*50vw);
+        transform: translate(calc(var(--mobile-screen-ratio)*-5vw), calc(var(--mobile-screen-ratio)*-2vw));
+    }
+
+    .search-checkbox-icon {
+        height: calc(var(--mobile-screen-ratio)*21vw);
+        transition: opacity 400ms ease-out;        
+    }
+
+    #toggle-01:active > #money-bill-wave-solid-icon {
+        opacity: 0;
+    }
+    
+    #toggle-02:active + .filter-category {
+        color: #0065FC;
+    }
+
+    #toggle-02:active > #child-solid-icon {
+        opacity: 0;
+    }
+    
+    #toggle-03:active + .filter-category {
+        color: #0065FC;
+    }
+    
+    #toggle-03:active > #heart-solid-icon {
+        opacity: 0;
+    }
+
+    #toggle-04:active > #dog-solid-icon {
+        opacity: 0;
+    }
+    
+    #toggle-04:active + .filter-category {
+        color: #0065FC;
+    }    
+
+    .town-info {
+        margin: 0 0 0 calc(var(--mobile-screen-ratio)*20vw);
+    }
+
+    .info {
+        margin: 0 calc(var(--mobile-screen-ratio)*24vw) 0 0 ;
+        width: calc(var(--mobile-screen-ratio)*24vw);
+        height: calc(var(--mobile-screen-ratio)*24vw);
+        border: solid calc(var(--mobile-screen-ratio)*2vw) #d9d9d9;
+        border-radius: calc(var(--mobile-screen-ratio)*24vw);
+        transform: translate(0, calc(var(--mobile-screen-ratio)*-20vw));
+    }
+    
+    #info-solid-icon {        
+        height: calc(var(--mobile-screen-ratio)*12vw);
+    }
+    
+    .town-info p {       
+        width: calc(var(--mobile-screen-ratio)*280vw);        
+    }
+
+    /*-------{HEBERGEMENTS}-------*/
+    /*-------{{brkpnt < 768}}-------*/
+    .hebergements {
+        flex-direction: column-reverse;        
+    }
+    
+    /*-------{HEBERGEMENTS}-------*/
+    /*-------{{brkpnt < 768}-------*/
+    /*-------{{{LES PLUS POPULAIRES}}}-------*/    
+    #les_plus_populaires {        
+        background-color: #f2f2f2;
+        padding: calc(var(--mobile-screen-ratio)*20vw) 0 calc(var(--mobile-screen-ratio)*37vw) 0;
+    }    
+
+    .les_plus_populaires-title {
+        margin: 0 0 0 calc(var(--mobile-screen-ratio)*20%);        
+    }
+
+    .chart-line-icon {
+        margin: 0 0 0 calc(var(--mobile-screen-ratio)*104vw);
+        width: calc(var(--mobile-screen-ratio)*24vw);        
+    }
+
+    /*-------{HEBERGEMENTS}-------*/
+    /*-------{{brkpnt < 768}-------*/
+    /*-------{{{LES PLUS POPULAIRES}}}-------*/
+    /*-------{{{{CARTES}}}}-------*/
+    .les_plus_populaires-card {          
+        margin: 0 calc(var(--mobile-screen-ratio)*20%) calc(var(--mobile-screen-ratio)*17%) calc(var(--mobile-screen-ratio)*20%);
+        width: calc(var(--mobile-screen-ratio)*334%);
+        height: calc(var(--mobile-screen-ratio)*144%);
+        box-shadow: 0 calc(var(--mobile-screen-ratio)*12vw) calc(var(--mobile-screen-ratio)*12vw) 0 #d9d9d9;
+        border-radius: calc(var(--mobile-screen-ratio)*17vw);        
+        padding: calc(var(--mobile-screen-ratio)*5%);        
+    }
+
+    .les_plus_populaires-card-image {
+        width: calc(var(--mobile-screen-ratio)*127vw);
+        height: calc(var(--mobile-screen-ratio)*134vw);
+        border-radius: calc(var(--mobile-screen-ratio)*14vw) 0 0 calc(var(--mobile-screen-ratio)*14vw);
+    }
+
+    .les_plus_populaires-card-body-title {
+        transform: translate(calc(var(--mobile-screen-ratio)*22vw), calc(var(--mobile-screen-ratio)*-6vw));
+        width: calc(var(--mobile-screen-ratio)*137vw);
+    }
+
+    .les_plus_populaires-card-body-price {        
+        transform: translate(calc(var(--mobile-screen-ratio)*22vw), calc(var(--mobile-screen-ratio)*-10vw));        
+    }
+
+    .les_plus_populaires-card-body-star-ratings {        
+        transform: translate(calc(var(--mobile-screen-ratio)*22vw), calc(var(--mobile-screen-ratio)*6vw));        
+    }
+
+    .star-solid-icon {
+        margin: 0 calc(var(--mobile-screen-ratio)*2vw) 0 0;
+        width: calc(var(--mobile-screen-ratio)*12vw);
+    }
+    
+    .star-solid-icon-grey {
+        width: calc(var(--mobile-screen-ratio)*12vw);
+    }
+
+    /*-------{HEBERGEMENTS}-------*/
+    /*-------{{brkpnt < 768}-------*/
+    /*-------{{{HEBERGEMENTS A MARSEILLE}}}-------*/
+    #hebergements_a_marseille {
+        padding: calc(var(--mobile-screen-ratio)*37vw) 0 calc(var(--mobile-screen-ratio)*48vw) 0;        
+    }
+
+    .hebergements_a_marseille-title {
+        margin: 0 0 0 calc(var(--mobile-screen-ratio)*20%);
+        width: fit-content;        
+    }
+
+    /*-------{HEBERGEMENTS}-------*/
+    /*-------{{brkpnt < 768}-------*/
+    /*-------{{{HEBERGEMENTS A MARSEILLE}}}-------*/
+    /*-------{{{{CARTES}}}}-------*/
+    .hebergements_a_marseille-cards {    
+        flex-direction: column;                  
+    }
+
+    .hebergements_a_marseille-card {
+        margin: 0 calc(var(--mobile-screen-ratio)*20%) calc(var(--mobile-screen-ratio)*17%) calc(var(--mobile-screen-ratio)*20%);
+        width: calc(var(--mobile-screen-ratio)*325%);        
+        height: calc(var(--mobile-screen-ratio)*144%);
+        box-shadow: 0 calc(var(--mobile-screen-ratio)*12vw) calc(var(--mobile-screen-ratio)*12vw) 0 #d9d9d9;
+        background-color: #ffffff;
+        border-radius: calc(var(--mobile-screen-ratio)*17vw);
+        padding: calc(var(--mobile-screen-ratio)*5%);
+    }
+
+    .hebergements_a_marseille-card-image {       
+        max-width: calc(var(--mobile-screen-ratio)*315vw);
+        height: calc(var(--mobile-screen-ratio)*114vw);
+        border-radius: calc(var(--mobile-screen-ratio)*14vw) calc(var(--mobile-screen-ratio)*14vw) 0 0;
+    }
+
+    .hebergements_a_marseille-card-image img {        
+        top: 50%;
+        left: 50%;
+        width: 103.5%;
+        transform: translate(-50%, -50%);        
+    }
+
+    .hebergements_a_marseille-card:hover .hebergements_a_marseille-card-image img {
+        width: 101%;
+    }
+
+    .hebergements_a_marseille-card-body {
+        padding: 0 0 0 calc(var(--mobile-screen-ratio)*16%);
+    }   
+    
+    .afficher_plus {
+        margin: 0 0 0 calc(var(--mobile-screen-ratio)*20%);
+        background-color: #ffffff;
+    }
+
+    .plus {    
+    margin: 0 0 0 calc(var(--mobile-screen-ratio)*10vw);      
+    width: calc(var(--mobile-screen-ratio)*25vw);
+    height: calc(var(--mobile-screen-ratio)*25vw);    
+    border-radius: 3.4vw;
+    }
+
+    .plus-solid-icon {        
+        width: calc(var(--mobile-screen-ratio)*15vw);
+    }
+
+    /*-------{ACTIVITES}-------*/
+    /*-------{{brkpnt < 768}-------*/
+    /*-------{{{ACTIVITES A MARSEILLE}}}-------*/
+    .activites {
+        padding: 0 0 calc(var(--mobile-screen-ratio)*48vw) 0;
+    }
+
+    .activites_a_marseille-title {
+        margin: 0 0 0 calc(var(--mobile-screen-ratio)*20%);
+        width: fit-content;        
+    }
+
+    /*-------{ACTIVITES}-------*/
+    /*-------{{brkpnt < 768}-------*/
+    /*-------{{{ACTIVITES A MARSEILLE}}}-------*/
+    /*-------{{{{CARTES}}}}-------*/
+    .activites_a_marseille-cards {            
+        flex-direction: column;
+        flex-wrap: nowrap;  
+    }
+
+    /* Vieux Port (1) Calanques (4) */
+    .activites_a_marseille-card {
+        margin: 0 calc(var(--mobile-screen-ratio)*20%) calc(var(--mobile-screen-ratio)*17%) calc(var(--mobile-screen-ratio)*20%);
+        width: calc(var(--mobile-screen-ratio)*325%);
+        height: calc(var(--mobile-screen-ratio)*144%);
+        box-shadow: 0 calc(var(--mobile-screen-ratio)*3vw) calc(var(--mobile-screen-ratio)*3vw) 0 #d9d9d9;
+        border-radius: calc(var(--mobile-screen-ratio)*17vw);
+    }    
+
+     /* Vieux Port (1) */
+     .activites_a_marseille-card-image-vieux_port {    
+        height: 34.84vw;
+        border-radius: calc(var(--mobile-screen-ratio)*17vw) calc(var(--mobile-screen-ratio)*17vw) 0 0;
+    }
+
+     .activites_a_marseille-card-image-vieux_port img {
+        top: 71%;        
+        width: 100%;
+    }
+
+    .activites_a_marseille-card:hover .activites_a_marseille-card-image-vieux_port img {
+        width: 103%;      
+    }
+
+    /* Pomègues (2) */
+    .activites_a_marseille-card-image-pomegues {    
+        height: 34.84vw;
+        border-radius: calc(var(--mobile-screen-ratio)*17vw) calc(var(--mobile-screen-ratio)*17vw) 0 0;
+    }
+
+    .activites_a_marseille-card-image-pomegues img {
+        top: 70%;        
+    }
+
+    /* Frioul (3) */
+    .activites_a_marseille-card-image-frioul {    
+        height: 34.84vw;
+        border-radius: calc(var(--mobile-screen-ratio)*17vw) calc(var(--mobile-screen-ratio)*17vw) 0 0;
+    }
+
+    .activites_a_marseille-card-image-frioul img {    
+        top: 71%;
+        width: 100%;        
+    }    
+
+    /* Calanques (4) */
+    .activites_a_marseille-card-image-calanques {    
+        height: 34.84vw;
+        border-radius: calc(var(--mobile-screen-ratio)*17vw) calc(var(--mobile-screen-ratio)*17vw) 0 0;
+    }
+
+    .activites_a_marseille-card-image-calanques img { 
+        top: 70%;
+        width: 100%;
+    }
+
+    .activites_a_marseille-card:hover .activites_a_marseille-card-image-calanques img {
+        width: 105%;      
+    }
+
+    /* Notre-Dame (5) */
+    .activites_a_marseille-card-image-notre_dame {    
+        height: 34.84vw;
+        border-radius: calc(var(--mobile-screen-ratio)*17vw) calc(var(--mobile-screen-ratio)*17vw) 0 0;
+    }
+
+    /* Longchamp (6) */
+    .activites_a_marseille-card-image-parc_longchamp {    
+        height: 34.84vw;
+        border-radius: calc(var(--mobile-screen-ratio)*17vw) calc(var(--mobile-screen-ratio)*17vw) 0 0;
+    }
+
+    .activites_a_marseille-card-body-title {
+        transform: translate(20px, 5px);
+    }
+
+    /*-------{FOOTER}-------*/
+    /*-------{{brkpnt < 768}-------*/
+    footer {
+        margin: 0 0 calc(var(--mobile-screen-ratio)*49vw) 0;
+        height: calc(var(--mobile-screen-ratio)*560vw);
+        background-color: #f2f2f2;
+        padding: calc(var(--mobile-screen-ratio)*49vw) 0 0 calc(var(--mobile-screen-ratio)*20vw);
+    }
+
+    footer nav {
+        flex-direction: column;
+    }
+    
+    footer nav ul {        
+        margin: 0 0 calc(var(--mobile-screen-ratio)*58vw) 0;
+    }
+
+    footer h3 {
+        margin: 0 0 calc(var(--mobile-screen-ratio)*27vw) 0;        
+    }    
+}

@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Arnaud Dejeammes">
+        <meta name="description" content="Prototype site Web Booki – Formation Développeur Web, OpenClassrooms">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="preload" href="css/Raleway-Regular.woff" as="font" type="font/woff">
+        <link rel="preload" href="css/Raleway-Bold.woff" as="font" type="font/woff">
+        <link rel="preload" href="css/Raleway-ExtraBold.woff" as="font" type="font/woff">
+        <link rel="stylesheet" type="text/css" href="css/normalize.css">
+        <link rel="stylesheet" href="css/style.css">        
+        
+        <title>
+            Booki – Hébergements et activités dans la ville de votre choix
+        </title>
+        <link rel="icon" type="image/x-icon" href="images/Booki_icons/booki_favicon_16_16.png">
+    </head>
+
+    <body>
+        <h1>
+            Booki
+        </h1>
+        <header>
+            <div class="logo">
+                <a href="#">
+                    <img id="logo_booki" src="images/logo_booki_small.png" alt="Logo Booki" title="Booki : Rechercher les hébergements et les activités d’une ville">
+                </a>
+            </div>
+            <nav class="header-nav">
+                <h2>
+                    Barre de navigation
+                </h2>
+                <ul>
+                    <li>
+                        <div class="categories-link">
+                            <span  id="category-link_hebergements">
+                                <a href="#hebergements_a_marseille">
+                                    Hébergements
+                                </a>
+                            </span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="categories-link">
+                            <span id="category-link_activites">
+                                <a href="#activites_a_marseille">
+                                    Activités
+                                </a>
+                            </span>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <form method="post" action="#">
+            <div id="form-title">
+                <h2>
+                    <span>
+                        Trouvez votre hébergement pour des vacances de rêve
+                    </span>
+                </h2>
+                <p>
+                    En plein centre ville ou en pleine nature
+                </p>
+            </div>
+            <div class="town-location">
+                <label for="location" class="location-search">
+                    <svg class="map-marker-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                        <!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+                        <path d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"/>
+                    </svg>                    
+                </label>
+                <label for="location">
+                    <input id="location" size="25" type="search" name="location" placeholder="Marseille, France" required class="search-field">
+                </label>
+                <input class="search-desktop" type="submit" value="Rechercher">
+                <input class="search-mobile" type="submit" value="" style="background-image: url(images/Booki_icons/search-solid-ffffff.svg);">
+            </div>
+            <div class="filters">
+                <div class="filters-title">
+                    <h3>
+                        Filtres
+                    </h3>
+                </div>
+                <ul class="filter-switches">
+                    <li class="search-filter">
+                        <div class="search-checkbox" id="search-checkbox-01">
+                            <button class="toggle" id="toggle-01" title="Sélectionner les hébergements les moins chers">
+                                <svg class="search-checkbox-icon" id="money-bill-wave-solid-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                                    <!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+                                    <path d="M621.16 54.46C582.37 38.19 543.55 32 504.75 32c-123.17-.01-246.33 62.34-369.5 62.34-30.89 0-61.76-3.92-92.65-13.72-3.47-1.1-6.95-1.62-10.35-1.62C15.04 79 0 92.32 0 110.81v317.26c0 12.63 7.23 24.6 18.84 29.46C57.63 473.81 96.45 480 135.25 480c123.17 0 246.34-62.35 369.51-62.35 30.89 0 61.76 3.92 92.65 13.72 3.47 1.1 6.95 1.62 10.35 1.62 17.21 0 32.25-13.32 32.25-31.81V83.93c-.01-12.64-7.24-24.6-18.85-29.47zM48 132.22c20.12 5.04 41.12 7.57 62.72 8.93C104.84 170.54 79 192.69 48 192.69v-60.47zm0 285v-47.78c34.37 0 62.18 27.27 63.71 61.4-22.53-1.81-43.59-6.31-63.71-13.62zM320 352c-44.19 0-80-42.99-80-96 0-53.02 35.82-96 80-96s80 42.98 80 96c0 53.03-35.83 96-80 96zm272 27.78c-17.52-4.39-35.71-6.85-54.32-8.44 5.87-26.08 27.5-45.88 54.32-49.28v57.72zm0-236.11c-30.89-3.91-54.86-29.7-55.81-61.55 19.54 2.17 38.09 6.23 55.81 12.66v48.89z"/>
+                                </svg>
+                            </button>
+                            <div class="filter-category">
+                                <input type="checkbox" checked>
+                                <span>
+                                    Économique
+                                </span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="search-filter">
+                        <div class="search-checkbox" id="search-checkbox-02">
+                            <button class="toggle" id="toggle-02" title="Sélectionner les hébergements pour les familles">
+                                <svg class="search-checkbox-icon" id="child-solid-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                                    <!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+                                    <path d="M120 72c0-39.765 32.235-72 72-72s72 32.235 72 72c0 39.764-32.235 72-72 72s-72-32.236-72-72zm254.627 1.373c-12.496-12.497-32.758-12.497-45.254 0L242.745 160H141.254L54.627 73.373c-12.496-12.497-32.758-12.497-45.254 0-12.497 12.497-12.497 32.758 0 45.255L104 213.254V480c0 17.673 14.327 32 32 32h16c17.673 0 32-14.327 32-32V368h16v112c0 17.673 14.327 32 32 32h16c17.673 0 32-14.327 32-32V213.254l94.627-94.627c12.497-12.497 12.497-32.757 0-45.254z"/>
+                                </svg>                                
+                            </button>
+                            <div class="filter-category">
+                                <input type="checkbox" checked>
+                                <span>
+                                    Familial
+                                </span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="search-filter">
+                        <div class="search-checkbox" id="search-checkbox-03">
+                            <button class="toggle" id="toggle-03" title="Sélectionner les hébergements pour les amoureux">
+                                <svg class="search-checkbox-icon" id="heart-solid-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                    <!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+                                    <path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"/>
+                                </svg>                                
+                            </button>
+                            <div class="filter-category">
+                                <input type="checkbox" checked>
+                                <span>
+                                    Romantique
+                                </span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="search-filter">
+                        <div class="search-checkbox" id="search-checkbox-04">
+                            <button class="toggle" id="toggle-04" title="Sélectionner les hébergements où les animaux sont les bienvenus">
+                                <svg class="search-checkbox-icon" id="dog-solid-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                    <!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+                                    <path d="M298.06,224,448,277.55V496a16,16,0,0,1-16,16H368a16,16,0,0,1-16-16V384H192V496a16,16,0,0,1-16,16H112a16,16,0,0,1-16-16V282.09C58.84,268.84,32,233.66,32,192a32,32,0,0,1,64,0,32.06,32.06,0,0,0,32,32ZM544,112v32a64,64,0,0,1-64,64H448v35.58L320,197.87V48c0-14.25,17.22-21.39,27.31-11.31L374.59,64h53.63c10.91,0,23.75,7.92,28.62,17.69L464,96h64A16,16,0,0,1,544,112Zm-112,0a16,16,0,1,0-16,16A16,16,0,0,0,432,112Z"/>
+                                </svg>
+                            </button>
+                            <div class="filter-category">
+                                <input type="checkbox" checked>
+                                <span>
+                                    Animaux autorisés
+                                </span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="town-info">
+                <div class="info">
+                    <svg id="info-solid-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512">
+                        <!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+                        <path d="M20 424.229h20V279.771H20c-11.046 0-20-8.954-20-20V212c0-11.046 8.954-20 20-20h112c11.046 0 20 8.954 20 20v212.229h20c11.046 0 20 8.954 20 20V492c0 11.046-8.954 20-20 20H20c-11.046 0-20-8.954-20-20v-47.771c0-11.046 8.954-20 20-20zM96 0C56.235 0 24 32.235 24 72s32.235 72 72 72 72-32.235 72-72S135.764 0 96 0z"/>
+                    </svg>                    
+                </div>
+                <p>
+                    Plus de 500 logements sont disponibles dans cette ville
+                </p>
+            </div>
+        </form>
+        
+        <main>
+            <section class="hebergements">
+                <h2 class="hebergements_section-title">
+                    Hébergements
+                </h2>
+                <section id="hebergements_a_marseille">
+                    <div class="hebergements_a_marseille-title">
+                        <h2>
+                            Hébergements à Marseille
+                        </h2>
+                    </div>
+                    <div class="hebergements_a_marseille-cards">
+                        <a href="#hebergements_a_marseille">
+                            <article class="hebergements_a_marseille-card"  id="auberge_la_cannebiere">
+                                <div class="hebergements_a_marseille-card-image">
+                                    <img src="images/chambre_auberge_la_cannebiere.jpg" alt="Vue d’une chambre de l’auberge La Cannebière" title="Réservez votre séjour">
+                                </div>
+                                <div class="hebergements_a_marseille-card-body">
+                                    <div class="hebergements_a_marseille-card-body-title">
+                                        <h3>
+                                            Auberge La Cannebière
+                                        </h3>
+                                    </div>
+                                    <div class="hebergements_a_marseille-card-body-price">
+                                        <P>
+                                            Nuit à partir de <span>25€</span>
+                                        </P>
+                                    </div>
+                                    <div class="hebergements_a_marseille-card-body-star-ratings">
+                                        <svg class="star-solid-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                            <!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+                                            <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/>
+                                        </svg>
+                                        <svg class="star-solid-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                            <!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+                                            <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/>
+                                        </svg>
+                                        <svg class="star-solid-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                            <!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+                                            <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/>
+                                        </svg>
+                                        <svg class="star-solid-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                            <!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+                                            <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/>
+                                        </svg>
+                                        <svg class="star-solid-icon-grey" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                            <!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+                                            <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </article>
+                        </a>
+                        
+                        <a href="#hebergements_a_marseille">
+                            <article class="hebergements_a_marseille-card"  id="hotel_du_port">
+                                <div class="hebergements_a_marseille-card-image">
+                                    <img src="images/chambre_hotel_du_port.jpg" alt="Vue d’une chambre de l’hôtel du port" title="Réservez votre séjour">
+                                </div>
+                                <div class="hebergements_a_marseille-card-body">
+                                    <div class="hebergements_a_marseille-card-body-title">
+                                        <h3>
+                                            Hôtel du port
+                                        </h3>
+                                    </div>
+                                    <div class="hebergements_a_marseille-card-body-price">
+                                        <P>
+                                            Nuit à partir de 52<span>€</span>
+                                        </P>
+                                    </div>
+                                    <div class="hebergements_a_marseille-card-body-star-ratings" >
+                                        <svg class="star-solid-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                            <!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+                                            <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/>
+                                        </svg>
+                                        <svg class="star-solid-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                            <!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+                                            <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/>
+                                        </svg>
+                                        <svg class="star-solid-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                            <!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+                                            <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/>
+                                        </svg>
+                                        <svg class="star-solid-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                            <!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+                                            <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/>
+                                        </svg>
+                                        <svg class="star-solid-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                            <!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+                                            <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/>
+                                        </svg>                                        
+                                    </div>
+                                </div>
+                            </article>
+                        </a>
+                        
+                        <a href="#hebergements_a_marseille">
+                            <article class="hebergements_a_marseille-card" id="hotel_les_mouettes">
+                                <div class="hebergements_a_marseille-card-image">
+                                    <img src="images/chambre_hotel_les_mouettes.jpg" alt="Vue d’une chambre de l’hôtel Les mouettes" title="Réservez votre séjour">
+                                </div>
+                                <div class="hebergements_a_marseille-card-body">
+                                    <div class="hebergements_a_marseille-card-body-title">
+                                        <h3>
+                                            Hôtel Les mouettes
+                                        </h3>
+                                    </div>
+                                    <div class="hebergements_a_marseille-card-body-price">
+                                        <P>
+                                            Nuit à partir de 76<span>€</span>
+                                        </P>
+                                    </div>
+                                    <div class="hebergements_a_marseille-card-body-star-ratings">
+                                        <svg class="star-solid-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                            <!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+                                            <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/>
+                                        </svg>
+                                        <svg class="star-solid-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                            <!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+                                            <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/>
+                                        </svg>
+                                        <svg class="star-solid-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                            <!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+                                            <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/>
+                                        </svg>
+                                        <svg class="star-solid-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                            <!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+                                            <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/>
+                                        </svg>
+                                        <svg class="star-solid-icon-grey" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                            <!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+                                            <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/>
+                                        </svg>                                        
+                                    </div>
+                                </div>
+                            </article>
+                        </a>
+                        
+                        <a href="#hebergements_a_marseille">
+                            <article class="hebergements_a_marseille-card" id="hotel_de_la_mer">
+                                <div class="hebergements_a_marseille-card-image">
+                                    <img src="images/chambre_hotel_de_la_mer.jpg" alt="Vue d’une chambre de l’hôtel de la mer" title="Réservez votre séjour">
+                                </div>
+                                <div class="hebergements_a_marseille-card-body">
+                                    <div class="hebergements_a_marseille-card-body-title">
+                                        <h3>
+                                            Hôtel de la mer
+                                        </h3>
+                                    </div>
+                                    <div class="hebergements_a_marseille-card-body-price">
+                                        <P>Nuit à partir de 46<span>€</span></P>
+                                    </div>
+                                    <div class="hebergements_a_marseille-card-body-star-ratings">
+                                        <svg class="star-solid-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                            <!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+                                            <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/>
+                                        </svg>
+                                        <svg class="star-solid-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                            <!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+                                            <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/>
+                                        </svg>                                        
+                                        <svg class="star-solid-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                            <!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+                                            <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/>
+                                        </svg>
+                                        <svg class="star-solid-icon-grey" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                            <!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+                                            <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/>
+                                        </svg>
+                                        <svg class="star-solid-icon-grey" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                            <!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+                                            <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </article>
+                        </a>
+                        
+                        <a href="#hebergements_a_marseille">
+                            <article class="hebergements_a_marseille-card" id="auberge_le_panier">
+                                <div class="hebergements_a_marseille-card-image">
+                                    <img src="images/chambre_auberge_le_panier.jpg" alt="Vue d’une chambre de l’auberge Le Panier" title="Réservez votre séjour">
+                                </div>
+                                <div class="hebergements_a_marseille-card-body">
+                                    <div class="hebergements_a_marseille-card-body-title">
+                                        <h3>
+                                            Auberge Le Panier
+                                        </h3>
+                                    </div>
+                                    <div class="hebergements_a_marseille-card-body-price">
+                                        <P>
+                                            Nuit à partir de <span>23€</span>
+                                        </P>
+                                    </div>
+                                    <div class="hebergements_a_marseille-card-body-star-ratings">
+                                        <svg class="star-solid-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                            <!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+                                            <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/>
+                                        </svg>
+                                        <svg class="star-solid-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                            <!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+                                            <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/>
+                                        </svg>
+                                        <svg class="star-solid-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                            <!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+                                            <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/>
+                                        </svg>
+                                        <svg class="star-solid-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                            <!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+                                            <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/>
+                                        </svg>
+                                        <svg class="star-solid-icon-grey" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                            <!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+                                            <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </article>
+                        </a>
+
+                        <a href="#hebergements_a_marseille">
+                            <article class="hebergements_a_marseille-card" id="hotel_chez_amina">
+                                <div class="hebergements_a_marseille-card-image">
+                                    <img src="images/chambre_hotel_chez_amina.jpg" alt="Vue d’une chambre de l’hôtel Chez Amina" title="Réservez votre séjour">
+                                </div>
+                                <div class="hebergements_a_marseille-card-body">
+                                    <div class="hebergements_a_marseille-card-body-title">
+                                        <h3>
+                                            Hôtel Chez Amina
+                                        </h3>
+                                    </div>
+                                    <div class="hebergements_a_marseille-card-body-price">
+                                        <P>
+                                            Nuit à partir de 96<span>€</span>
+                                        </P>
+                                    </div>
+                                    <div class="hebergements_a_marseille-card-body-star-ratings">
+                                        <svg class="star-solid-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                            <!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+                                            <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/>
+                                        </svg>
+                                        <svg class="star-solid-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                            <!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+                                            <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/>
+                                        </svg>
+                                        <svg class="star-solid-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                            <!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+                                            <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/>
+                                        </svg>
+                                        <svg class="star-solid-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                            <!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+                                            <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/>
+                                        </svg>
+                                        <svg class="star-solid-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                            <!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+                                            <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </article>
+                        </a>
+                    </div>
+                    
+                    <div class="afficher_plus">
+                        <a href="#hebergements_a_marseille">
+                            <span class="afficher_plus-text">
+                                Afficher plus
+                            </span>
+                        </a>
+                        <div class="plus">
+                            <svg class="plus-solid-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+                                <path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                </section>
+                
+                <aside id="les_plus_populaires">
+                    <div class="les_plus_populaires-title">
+                        <h2>
+                            Les plus populaires
+                        </h2>
+                        <svg class="chart-line-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                            <!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+                            <path d="M496 384H64V80c0-8.84-7.16-16-16-16H16C7.16 64 0 71.16 0 80v336c0 17.67 14.33 32 32 32h464c8.84 0 16-7.16 16-16v-32c0-8.84-7.16-16-16-16zM464 96H345.94c-21.38 0-32.09 25.85-16.97 40.97l32.4 32.4L288 242.75l-73.37-73.37c-12.5-12.5-32.76-12.5-45.25 0l-68.69 68.69c-6.25 6.25-6.25 16.38 0 22.63l22.62 22.62c6.25 6.25 16.38 6.25 22.63 0L192 237.25l73.37 73.37c12.5 12.5 32.76 12.5 45.25 0l96-96 32.4 32.4c15.12 15.12 40.97 4.41 40.97-16.97V112c.01-8.84-7.15-16-15.99-16z"/>
+                        </svg>                        
+                    </div>
+                    <div class="les_plus_populaires-cards">
+                        
+                        <a href="#les_plus_populaires">
+                            <article class="les_plus_populaires-card" id="hotel_le_soleil_du_matin">
+                                <div class="les_plus_populaires-card-image" id="les_plus_populaires-card-image-1">
+                                    <img src="images/chambre_hotel_le_soleil_du_matin.jpg" alt="Vue d’une chambre de l’hôtel Le soleil du matin" title="Réservez votre séjour">
+                                </div>
+                                <div class="les_plus_populaires-card-body">
+                                    <div class="les_plus_populaires-card-body-title">
+                                        <h3>
+                                            Hôtel Le soleil du matin
+                                        </h3>
+                                    </div>
+                                    <div class="les_plus_populaires-card-body-price">
+                                        <P>
+                                            Nuit à partir de 128<span class="bold">€</span>
+                                        </P>
+                                    </div>
+                                    <div class="les_plus_populaires-card-body-star-ratings">
+                                        <svg class="star-solid-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                            <!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+                                            <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/>
+                                        </svg>
+                                        <svg class="star-solid-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                            <!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+                                            <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/>
+                                        </svg>
+                                        <svg class="star-solid-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                            <!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+                                            <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/>
+                                        </svg>
+                                        <svg class="star-solid-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                            <!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+                                            <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/>
+                                        </svg>
+                                        <svg class="star-solid-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                            <!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+                                            <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </article>
+                        </a>
+
+                        <a href="#les_plus_populaires">
+                            <article class="les_plus_populaires-card" id="chambres_d_hotes_au_coeur_de_l_eau">
+                                <div class="les_plus_populaires-card-image" id="les_plus_populaires-card-image-2">
+                                    <img src="images/chambre_chambres_d_hotes_au_coeur_de_l_eau.jpg" alt="Vue d’une chambre des chambres d’hôtes Au cœur de l’eau" title="Réservez votre séjour">
+                                </div>
+                                <div class="les_plus_populaires-card-body">
+                                    <div class="les_plus_populaires-card-body-title">
+                                        <h3>
+                                            Au cœur de l’eau<br>Chambres&nbsp;d’hôtes
+                                        </h3>
+                                    </div>
+                                    <div class="les_plus_populaires-card-body-price">
+                                        <P>
+                                            Nuit à partir de 71<span class="bold">€</span>
+                                        </P>
+                                    </div>
+                                    <div class="les_plus_populaires-card-body-star-ratings">
+                                        <svg class="star-solid-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                            <!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+                                            <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/>
+                                        </svg>
+                                        <svg class="star-solid-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                            <!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+                                            <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/>
+                                        </svg>
+                                        <svg class="star-solid-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                            <!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+                                            <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/>
+                                        </svg>
+                                        <svg class="star-solid-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                            <!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+                                            <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/>
+                                        </svg>
+                                        <svg class="star-solid-icon-grey" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                            <!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+                                            <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </article>
+                        </a>
+
+                        <a href="#les_plus_populaires">
+                            <article class="les_plus_populaires-card" id="hotel_tout_bleu_et_blanc">
+                                <div class="les_plus_populaires-card-image" id="les_plus_populaires-card-image-3">
+                                    <img src="images/chambre_hotel_tout_bleu_et_blanc.jpg" alt="Vue d’une chambre de l’hôtel Tout bleu et blanc" title="Réservez votre séjour">
+                                </div>
+                                <div class="les_plus_populaires-card-body">
+                                    <div class="les_plus_populaires-card-body-title">
+                                        <h3>
+                                            Hôtel Tout bleu et blanc
+                                        </h3>
+                                    </div>
+                                    <div class="les_plus_populaires-card-body-price">
+                                        <P>
+                                            Nuit à partir de 68<span class="bold">€</span>
+                                        </P>
+                                    </div>
+                                    <div class="les_plus_populaires-card-body-star-ratings">
+                                        <svg class="star-solid-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                            <!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+                                            <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/>
+                                        </svg>
+                                        <svg class="star-solid-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                            <!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+                                            <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/>
+                                        </svg>
+                                        <svg class="star-solid-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                            <!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+                                            <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/>
+                                        </svg>
+                                        <svg class="star-solid-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                            <!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+                                            <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/>
+                                        </svg>
+                                        <svg class="star-solid-icon-grey" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                            <!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+                                            <path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </article>
+                        </a>
+                    </div>
+                </aside>
+            </section>
+ 
+            <section class="activites">
+                <h2 class="activites_section-title">
+                    Activités
+                </h2>
+                <section id="activites_a_marseille">
+                    <div class="activites_a_marseille-title">
+                        <h2>
+                            Activités à Marseille
+                        </h2>
+                    </div>
+                    <div class="activites_a_marseille-cards">
+                    
+                        <article class="activites_a_marseille-card" id="vieux_port">
+                            <a href="#activites_a_marseille">
+                                <div class="activites_a_marseille-card-image-vieux_port">
+                                    <img src="images/vue_du_vieux_port.jpg" alt="Vue du Vieux Port : bateaux, mâts, immeubles, basilique Notre-Dame-de-la-Garde sur sa colline " title="Plus d'informations">
+                                </div>
+                                <div class="activites_a_marseille-card-body-title">
+                                    <h3>
+                                        Vieux Port
+                                    </h3>
+                                </div>
+                            </a>
+                        </article>
+
+                        <article class="activites_a_marseille-card" id="fort_de_pomegues">
+                            <a href="#activites_a_marseille">
+                                <div class="activites_a_marseille-card-image-pomegues">
+                                    <img src="images/vue_du_fort_de_pomegues.jpg" alt="Vue du fort de Pomègues : roche et fortin" title="Plus d'informations">
+                                </div>
+                                <div class="activites_a_marseille-card-body-title">
+                                    <h3>
+                                        Fort de Pomègues
+                                    </h3>
+                                </div>
+                            </a>
+                        </article>
+
+                        <article class="activites_a_marseille-card" id="iles_du_frioul">
+                            <a href="#activites_a_marseille">
+                                <div class="activites_a_marseille-card-image-frioul">
+                                    <img src="images/vue_des_iles_du_frioul.jpg" alt="Vue des Îles du Frioul : téléscope orange et bleu, rade de Marseille avec sa ligne de fortification maritime, Mer Méditerranée, archipel du Frioul" title="Plus d'informations">
+                                </div>
+                                <div class="activites_a_marseille-card-body-title">
+                                    <h3>
+                                        Îles du Frioul
+                                    </h3>
+                                </div>
+                            </a>
+                        </article>
+                    
+                    
+                        <article class="activites_a_marseille-card" id="parc_national_des_calanques">
+                            <a href="#activites_a_marseille">
+                                <div class="activites_a_marseille-card-image-calanques">
+                                    <img class="calanques" src="images/vue_du_parc_national_des_calanques.jpg" alt="Vue du Parc National des Calanques : calanques rocheuses et végétation, Mer Méditerranée" title="Plus d'informations">
+                                </div>
+                                <div class="activites_a_marseille-card-body-title">
+                                    <h3>
+                                        Parc National des Calanques
+                                    </h3>
+                                </div>
+                            </a>
+                        </article>
+
+                        <article class="activites_a_marseille-card" id="notre_dame_de_la_garde">
+                            <a href="#activites_a_marseille">
+                                <div class="activites_a_marseille-card-image-notre_dame">
+                                    <img src="images/vue_de_notre_dame_de_la_garde.jpg" alt="Vue de Notre-Dame-de-la-Garde : habitations marseillaises, colline et basilique" title="Plus d'informations">
+                                </div>
+                                <div class="activites_a_marseille-card-body-title">
+                                    <h3>
+                                        Notre-Dame-de-la-Garde
+                                    </h3>
+                                </div>
+                            </a>
+                        </article>
+
+                        <article class="activites_a_marseille-card" id="parc_longchamp">
+                            <a href="#activites_a_marseille">
+                                <div class="activites_a_marseille-card-image-parc_longchamp">
+                                    <img class="parc_longchamp" src="images/vue_du_parc_longchamp.jpg" alt="Vue du Parc de Longchamp : fontaine et statues en pierre, colonnade circulaire du Palais de Longchamp" title="Plus d'informations">
+                                </div>
+                                <div class="activites_a_marseille-card-body-title">
+                                    <h3>
+                                        Parc Longchamp
+                                    </h3>
+                                </div>
+                            </a>
+                        </article>
+                        
+                    </div>
+                </section>
+            </section>
+        </main>
+        
+        <footer>
+            <section class="site-map">
+                <h2>
+                    Plan du site
+                </h2>
+                <nav class="footer-nav">
+                    <div class="site-map-category" id="a_propos">
+                        <h3>
+                            A propos
+                        </h3>
+                        <ul>
+                            <li>
+                                <a href="#a_propos">
+                                    Fonctionnement du site
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#a_propos">
+                                    Conditions générales de vente
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#a_propos">
+                                    Données de confidentialité
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="site-map-category" id="nos_hebergements">
+                        <h3>
+                            Nos hébergements
+                        </h3>
+                        <ul> 
+                            <li>
+                                <a href="#nos_hebergements">
+                                    Charte qualité
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#nos_hebergements">
+                                    Soumettre votre hôtel
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="site-map-category" id="assistance">
+                        <h3>
+                            Assistance
+                        </h3>
+                        <ul>
+                            <li>
+                                <a href="#assistance">
+                                    Centre d’aide
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#assistance">
+                                    Nous contacter
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </section>
+        </footer>
+    </body>
+</html>
